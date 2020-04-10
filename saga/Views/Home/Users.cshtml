@@ -1,0 +1,77 @@
+﻿@using saga.Models
+@model System.Collections.Generic.List<saga.Models.Consumer>
+<br />
+<br />
+<br />
+<style>
+
+#tablehead {
+    text-align: center;
+    font-size: 20px;
+    padding: 0 0 13px 0;
+}
+#tbl {
+    text-align: left;
+    background: rgba(240, 240, 240, 0.8);
+    padding: 8px 6px 0 10px;
+}
+#tabl {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    #tabl td, #tabl th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #tabl tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #tabl tr:hover {
+        background-color: #ddd;
+    }
+
+    #tabl th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #FFF200;
+        color: black;
+    }
+table a:hover {
+    -webkit-transform: scale(5);
+}
+
+table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+</style>
+@if (Model != null && Model.Count != 0)
+{
+    <table id="tabl">
+        <tr>
+            <th>ID</th>
+            <th>Verovatnoca uzimanja kredita</th>
+            <th>Tip kredita</th>
+
+        </tr>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <td>@Model[i].UserStat1</td>
+                <td>@Model[i].UserStat2</td>
+                <td>@Model[i].UserStat3</td>
+
+
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <h1>Data base is empty</h1>
+}
+
